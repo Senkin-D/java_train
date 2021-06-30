@@ -13,8 +13,7 @@ public class CreateContactTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
-        //Для разнообразия здесь использую хромдрайвер
-        wd = new ChromeDriver();
+        wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
         login("admin", "secret");
@@ -62,17 +61,7 @@ public class CreateContactTest {
         wd.findElement(By.name("email")).clear();
         wd.findElement(By.name("email")).sendKeys(newUserData.getEmail());
         wd.findElement(By.name("new_group")).click();
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(newUserData.getSelectedGroup());
-        wd.findElement(By.name("new_group")).click();
-        wd.findElement(By.name("bday")).click();
-        new Select(wd.findElement(By.name("bday"))).selectByVisibleText(newUserData.getBday());
-        wd.findElement(By.name("bday")).click();
-        wd.findElement(By.name("bmonth")).click();
-        new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(newUserData.getBmonth());
-        wd.findElement(By.name("bmonth")).click();
-        wd.findElement(By.name("byear")).click();
-        wd.findElement(By.name("byear")).clear();
-        wd.findElement(By.name("byear")).sendKeys(newUserData.getByear());
+
     }
 
     private void goToHomepage() {
