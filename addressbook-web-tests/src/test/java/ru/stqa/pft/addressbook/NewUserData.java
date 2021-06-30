@@ -9,12 +9,9 @@ public class NewUserData {
     private final String mobile;
     private final String address;
     private final String email;
-    private final String selectedGroup;
-    private final String bday;
-    private final String bmonth;
-    private final String byear;
 
-    public NewUserData(String firstname, String lastname, String nickname, String title, String company, String mobile, String address, String email, String selectedGroup, String bday, String bmonth, String byear) {
+
+    public NewUserData(String firstname, String lastname, String nickname, String title, String company, String mobile, String address, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.nickname = nickname;
@@ -23,10 +20,7 @@ public class NewUserData {
         this.mobile = mobile;
         this.address = address;
         this.email = email;
-        this.selectedGroup = selectedGroup;
-        this.bday = bday;
-        this.bmonth = bmonth;
-        this.byear = byear;
+
     }
 
     public String getFirstname() {
@@ -61,19 +55,4 @@ public class NewUserData {
         return email;
     }
 
-    public String getSelectedGroup() {
-        return selectedGroup;
-    }
-
-    public String getBday() {
-        return bday;
-    }
-
-    public String getBmonth() {
-        return bmonth;
-    }
-
-    public String getByear() {
-        return byear;
-    }
 }
