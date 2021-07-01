@@ -2,7 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.pft.addressbook.model.NewUserData;
+import ru.stqa.pft.addressbook.model.UserData;
 
 public class ContactHelper extends HelperBase {
 
@@ -10,15 +10,15 @@ public class ContactHelper extends HelperBase {
         super(wd);
     }
 
-    public void fillNewUserForm(NewUserData newUserData) {
-        type(By.name("firstname"), newUserData.getFirstname());
-        type(By.name("lastname"), newUserData.getLastname());
-        type(By.name("nickname"), newUserData.getNickname());
-        type(By.name("title"), newUserData.getTitle());
-        type(By.name("company"), newUserData.getCompany());
-        type(By.name("mobile"), newUserData.getMobile());
-        type(By.name("address"), newUserData.getAddress());
-        type(By.name("email"), newUserData.getEmail());
+    public void fillUserForm(UserData userData) {
+        type(By.name("firstname"), userData.getFirstname());
+        type(By.name("lastname"), userData.getLastname());
+        type(By.name("nickname"), userData.getNickname());
+        type(By.name("title"), userData.getTitle());
+        type(By.name("company"), userData.getCompany());
+        type(By.name("mobile"), userData.getMobile());
+        type(By.name("address"), userData.getAddress());
+        type(By.name("email"), userData.getEmail());
 
     }
 
@@ -28,5 +28,13 @@ public class ContactHelper extends HelperBase {
 
     public void addNewUser() {
         click(By.linkText("add new"));
+    }
+
+    public void selectContact() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
+    }
+
+    public void submitUpdatedUser() {
+        click(By.name("update"));
     }
 }
