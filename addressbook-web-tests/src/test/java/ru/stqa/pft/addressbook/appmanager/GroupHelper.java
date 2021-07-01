@@ -8,7 +8,7 @@ public class GroupHelper {
     private FirefoxDriver wd;
 
     public GroupHelper(FirefoxDriver wd) {
-        this.wd=wd;
+        this.wd = wd;
     }
 
     public void returnToGroupPage() {
@@ -36,10 +36,10 @@ public class GroupHelper {
     }
 
     public void deleteSelectedGroup() {
-      wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
+        wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
     }
 
     public void selectGroup() {
-      wd.findElement(By.name("selected[]")).click();
+        wd.findElement(By.name("selected[]")).click();
     }
 }

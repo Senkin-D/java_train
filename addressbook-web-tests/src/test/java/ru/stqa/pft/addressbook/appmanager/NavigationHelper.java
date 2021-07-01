@@ -7,10 +7,15 @@ public class NavigationHelper {
     private FirefoxDriver wd;
 
     public NavigationHelper(FirefoxDriver wd) {
-        this.wd=wd;
+        this.wd = wd;
     }
 
     public void gotoGroupPage() {
         wd.findElement(By.linkText("groups")).click();
     }
+
+    public void goToHomepage() {
+        wd.findElement(By.linkText("home page")).click();
+    }
+
 }
